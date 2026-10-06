@@ -6,9 +6,9 @@
 * Nombre: Diseño del Sistema
 * Categoría: Diseño
 * Proyecto: PetCare
-* Versión: 1.0
+* Versión: 1.1
 * Estado: Aprobado para línea base inicial
-* Fecha: 03/10/2026
+* Fecha: 06/10/2026
 * Responsable: Equipo PetCare
 * Ubicación: 01_Documentacion/02_Diseno/DIS-001_Diseno_Sistema.md
 
@@ -18,6 +18,7 @@
 | Versión | Fecha      | Descripción del cambio     | Responsable    |
 | ------- | ---------- | -------------------------- | -------------- |
 | 1.0     | 03/10/2026 | Diseño inicial del sistema | Equipo PetCare |
+| 1.1     | 06/10/2026 | CR-001: se agrega el atributo peso_kg a la entidad Consulta | Juan David     |
 
 ## 1. Descripción general
 
@@ -57,6 +58,7 @@ La entidad Consulta contiene:
 * veterinario
 * motivo
 * observaciones
+* peso_kg
 
 ## 3. Modelo de dominio
 
@@ -83,6 +85,7 @@ classDiagram
         veterinario
         motivo
         observaciones
+        peso_kg
     }
 ```
 
@@ -114,14 +117,14 @@ classDiagram
 ### Programación de consulta
 
 1. El usuario selecciona una mascota e ingresa los datos de la consulta.
-2. El sistema verifica que la mascota exista y que la fecha sea válida.
+2. El sistema verifica que la mascota exista, que la fecha sea válida y que el peso sea un número mayor que cero.
 3. El sistema crea un objeto Consulta y lo almacena.
 
 ### Consulta de historial
 
 1. El usuario indica el código de la mascota.
 2. El sistema verifica que la mascota exista.
-3. El sistema devuelve sus consultas ordenadas por fecha.
+3. El sistema devuelve sus consultas ordenadas por fecha, incluyendo el peso de cada una.
 
 ## 6. Decisiones de diseño
 

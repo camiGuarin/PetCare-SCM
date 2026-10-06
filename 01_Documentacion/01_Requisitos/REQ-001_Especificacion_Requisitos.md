@@ -6,9 +6,9 @@
 * Nombre: Especificación de requisitos
 * Categoría: Especificación
 * Proyecto: PetCare
-* Versión: 1.0
+* Versión: 1.1
 * Estado: Aprobado para línea base inicial
-* Fecha: 03/10/2026
+* Fecha: 06/10/2026
 * Responsable: Equipo PetCare
 * Ubicación: 01_Documentacion/01_Requisitos/REQ-001_Especificacion_Requisitos.md
 
@@ -17,6 +17,7 @@
 | Versión | Fecha      | Descripción del cambio                              | Responsable    |
 | ------- | ---------- | --------------------------------------------------- | -------------- |
 | 1.0     | 03/10/2026 | Creación inicial de la especificación de requisitos | Equipo PetCare |
+| 1.1     | 06/10/2026 | CR-001: se agrega el registro del peso en la consulta y su visualización en el historial | Juan David     |
 
 ## 1. Propósito
 
@@ -66,10 +67,13 @@ El sistema deberá permitir programar una consulta veterinaria para una mascota 
 * Veterinario
 * Motivo de consulta
 * Observaciones clínicas básicas
+* Peso de la mascota en kilogramos
 
 Criterio de aceptación:
 
 La consulta debe quedar almacenada y asociada a la mascota cuando la mascota exista.
+
+El peso es obligatorio y debe ser un número mayor que cero.
 
 ### RF-04 - Consultar historial de una mascota
 
@@ -77,7 +81,7 @@ El sistema deberá permitir consultar el historial de consultas de una mascota u
 
 Criterio de aceptación:
 
-Cuando exista la mascota, el sistema deberá mostrar todas sus consultas registradas, ordenadas por fecha.
+Cuando exista la mascota, el sistema deberá mostrar todas sus consultas registradas, ordenadas por fecha e incluyendo el peso registrado en cada una, de modo que pueda observarse la evolución del peso.
 
 ## 4. Requisitos no funcionales
 

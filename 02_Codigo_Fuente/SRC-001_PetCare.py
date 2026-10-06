@@ -1,9 +1,9 @@
 # SRC-001 - Gestión de Propietarios, Mascotas y Consultas
 # Proyecto: PetCare
 # Categoria: Implementación
-# Versión: 1.0
+# Versión: 1.1
 # Estado: Aprobado para línea base inicial
-# Fecha: 04/10/2026
+# Fecha: 06/10/2026
 # Responsable: Equipo PetCare
 # Ubicación: 02_Codigo_Fuente/SRC-001_PetCare.py
 
@@ -43,13 +43,14 @@ class Mascota:
 
 
 class Consulta:
-    def __init__(self, id_consulta, id_mascota, fecha, veterinario, motivo, observaciones):
+    def __init__(self, id_consulta, id_mascota, fecha, veterinario, motivo, observaciones, peso_kg):
         self.id_consulta = id_consulta
         self.id_mascota = id_mascota
         self.fecha = fecha
         self.veterinario = veterinario
         self.motivo = motivo
         self.observaciones = observaciones
+        self.peso_kg = peso_kg
 
     def mostrar_informacion(self):
         return {
@@ -59,6 +60,7 @@ class Consulta:
             "veterinario": self.veterinario,
             "motivo": self.motivo,
             "observaciones": self.observaciones,
+            "peso_kg": self.peso_kg,
         }
 
 
@@ -104,7 +106,7 @@ def registrar_mascota(id_mascota, nombre, especie, raza, identificacion_propieta
     return mascota
 
 
-def programar_consulta(id_consulta, id_mascota, fecha, veterinario, motivo, observaciones):
+def programar_consulta(id_consulta, id_mascota, fecha, veterinario, motivo, observaciones, peso_kg):
     _validar_obligatorios(
         id_consulta=id_consulta,
         id_mascota=id_mascota,
@@ -112,6 +114,7 @@ def programar_consulta(id_consulta, id_mascota, fecha, veterinario, motivo, obse
         veterinario=veterinario,
         motivo=motivo,
         observaciones=observaciones,
+        peso_kg=peso_kg,
     )
     if id_mascota not in mascotas:
         raise ValueError("La mascota no existe")
@@ -121,7 +124,13 @@ def programar_consulta(id_consulta, id_mascota, fecha, veterinario, motivo, obse
         date.fromisoformat(fecha)
     except ValueError:
         raise ValueError("La fecha debe tener formato AAAA-MM-DD")
-    consulta = Consulta(id_consulta, id_mascota, fecha, veterinario, motivo, observaciones)
+    try:
+        peso = float(peso_kg)
+    except (TypeError, ValueError):
+        raise ValueError("El peso debe ser un número")
+    if peso <= 0:
+        raise ValueError("El peso debe ser mayor que cero")
+    consulta = Consulta(id_consulta, id_mascota, fecha, veterinario, motivo, observaciones, peso)
     consultas[id_consulta] = consulta
     return consulta
 
@@ -137,7 +146,7 @@ def consultar_historial(id_mascota):
 if __name__ == "__main__":
     registrar_propietario("1001", "Carlos Ramírez", "3001234567")
     registrar_mascota("M-01", "Luna", "Perro", "Labrador", "1001")
-    programar_consulta("C-02", "M-01", "2026-10-15", "Dra. Gómez", "Vacunación", "Vacuna aplicada")
-    programar_consulta("C-01", "M-01", "2026-10-01", "Dra. Gómez", "Control general", "Sin novedades")
+    programar_consulta("C-02", "M-01", "2026-10-15", "Dra. Gómez", "Vacunación", "Vacuna aplicada", 31.5)
+    programar_consulta("C-01", "M-01", "2026-10-01", "Dra. Gómez", "Control general", "Sin novedades", 30.0)
     for item in consultar_historial("M-01"):
         print(item)

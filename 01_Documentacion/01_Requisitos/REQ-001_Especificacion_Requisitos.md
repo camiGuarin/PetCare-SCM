@@ -18,7 +18,7 @@
 | ------- | ---------- | --------------------------------------------------- | -------------- |
 | 1.0     | 03/10/2026 | Creación inicial de la especificación de requisitos | Equipo PetCare |
 | 1.1     | 06/10/2026 | CR-001: se agrega el registro del peso en la consulta y su visualización en el historial | Juan David     |
-
+| 1.2     | 07/10/2026 | CR-002: se agrega el registro de medicamentos formulados en la consulta | Juan David     |
 ## 1. Propósito
 
 PetCare es un sistema de atención veterinaria destinado a administrar propietarios, mascotas y consultas veterinarias, conservando el historial clínico de cada mascota.
@@ -68,12 +68,15 @@ El sistema deberá permitir programar una consulta veterinaria para una mascota 
 * Motivo de consulta
 * Observaciones clínicas básicas
 * Peso de la mascota en kilogramos
+* Medicamentos formulados (opcional, uno o varios): medicamento, dosis, frecuencia y duración en días
 
 Criterio de aceptación:
 
 La consulta debe quedar almacenada y asociada a la mascota cuando la mascota exista.
 
 El peso es obligatorio y debe ser un número mayor que cero.
+
+Si se registra un medicamento, su nombre, dosis, frecuencia y duración son obligatorios, y la duración debe ser un número entero de días mayor que cero.
 
 ### RF-04 - Consultar historial de una mascota
 
@@ -82,6 +85,7 @@ El sistema deberá permitir consultar el historial de consultas de una mascota u
 Criterio de aceptación:
 
 Cuando exista la mascota, el sistema deberá mostrar todas sus consultas registradas, ordenadas por fecha e incluyendo el peso registrado en cada una, de modo que pueda observarse la evolución del peso.
+También deberá mostrar los medicamentos formulados en cada consulta.
 
 ## 4. Requisitos no funcionales
 

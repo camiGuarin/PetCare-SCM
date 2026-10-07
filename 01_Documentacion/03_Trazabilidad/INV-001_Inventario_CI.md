@@ -6,9 +6,9 @@
 - Nombre: Inventario de Elementos de Configuración
 - Categoría: Gestión de Configuración
 - Proyecto: PetCare
-- Versión: 1.0
-- Estado: Aprobado para línea base inicial
-- Fecha: 04/10/2026
+- Versión: 1.1
+- Estado: Aprobado para línea base 1.1
+- Fecha: 07/10/2026
 - Responsable: Equipo PetCare
 - Ubicación: 01_Documentacion/03_Trazabilidad/INV-001_Inventario_CI.md
 
@@ -17,6 +17,7 @@
 | Versión | Fecha | Descripción del cambio | Responsable |
 |---------|-------|------------------------|-------------|
 | 1.0 | 04/10/2026 | Creación inicial del inventario de elementos de configuración | Equipo PetCare |
+| 1.1 | 07/10/2026 | Actualización del inventario por CR-001 y establecimiento de la línea base 1.1 | Camila Guarín |
 
 ## 1. Objetivo
 
@@ -28,13 +29,13 @@ El inventario permite conocer la identificación, versión, estado, responsable,
 
 | Código | Nombre | Categoría | Versión | Estado | Responsable | Ubicación | Línea base |
 |--------|--------|-----------|---------|--------|-------------|-----------|------------|
-| REQ-001 | Especificación de requisitos | Especificación | 1.0 | Aprobado | Equipo PetCare | 01_Documentacion/01_Requisitos/REQ-001_Especificacion_Requisitos.md | BL-001 |
-| DIS-001 | Diseño del Sistema | Diseño | 1.0 | Aprobado | Equipo PetCare | 01_Documentacion/02_Diseno/DIS-001_Diseno_Sistema.md | BL-001 |
-| SRC-001 | Gestión de Propietarios, Mascotas y Consultas | Implementación | 1.0 | Aprobado | Equipo PetCare | 02_Codigo_Fuente/SRC-001_PetCare.py | BL-001 |
-| TST-001 | Plan y Casos de Prueba | Pruebas | 1.0 | Aprobado | Equipo PetCare | 03_Pruebas/TST-001_Plan_Casos_Prueba.md | BL-001 |
-| DOC-001 | Documentación de PetCare | Documentación | 1.0 | Aprobado | Equipo PetCare | 01_Documentacion/05_Documentacion/DOC-001_README_PetCare.md | BL-001 |
-| TRA-001 | Matriz de Trazabilidad | Gestión de Configuración | 1.0 | Aprobado | Equipo PetCare | 01_Documentacion/03_Trazabilidad/TRA-001_Matriz_Trazabilidad.md | BL-001 |
-| INV-001 | Inventario de Elementos de Configuración | Gestión de Configuración | 1.0 | Aprobado | Equipo PetCare | 01_Documentacion/03_Trazabilidad/INV-001_Inventario_CI.md | BL-001 |
+| REQ-001 | Especificación de requisitos | Especificación | 1.1 | Aprobado | Equipo PetCare | 01_Documentacion/01_Requisitos/REQ-001_Especificacion_Requisitos.md | BL-001 |
+| DIS-001 | Diseño del Sistema | Diseño | 1.1 | Aprobado | Equipo PetCare | 01_Documentacion/02_Diseno/DIS-001_Diseno_Sistema.md | BL-001 |
+| SRC-001 | Gestión de Propietarios, Mascotas y Consultas | Implementación | 1.1 | Aprobado | Equipo PetCare | 02_Codigo_Fuente/SRC-001_PetCare.py | BL-001 |
+| TST-001 | Plan y Casos de Prueba | Pruebas | 1.1 | Aprobado | Equipo PetCare | 03_Pruebas/TST-001_Plan_Casos_Prueba.md | BL-001 |
+| DOC-001 | Documentación de PetCare | Documentación | 1.1 | Aprobado | Equipo PetCare | 01_Documentacion/05_Documentacion/DOC-001_README_PetCare.md | BL-001 |
+| TRA-001 | Matriz de Trazabilidad | Gestión de Configuración | 1.1 | Aprobado | Equipo PetCare | 01_Documentacion/03_Trazabilidad/TRA-001_Matriz_Trazabilidad.md | BL-001 |
+| INV-001 | Inventario de Elementos de Configuración | Gestión de Configuración | 1.1 | Aprobado | Equipo PetCare | 01_Documentacion/03_Trazabilidad/INV-001_Inventario_CI.md | BL-001 v1.1 |
 
 ## 3. Criterios de identificación de los CI
 

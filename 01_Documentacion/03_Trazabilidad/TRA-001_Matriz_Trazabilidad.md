@@ -6,9 +6,9 @@
 - Nombre: Matriz de Trazabilidad
 - Categoría: Gestión de Configuración 
 - Proyecto: PetCare
-- Versión: 1.0
-- Estado: Aprobado para línea base inicial
-- Fecha: 04/10/2026
+- Versión: 1.1
+- Estado: Aprobado para línea base 1.1
+- Fecha: 07/10/2026
 - Responsable: Equipo PetCare
 - Ubicación: 01_Documentacion/03_Trazabilidad/TRA-001_Matriz_Trazabilidad.md
 
@@ -17,6 +17,7 @@
 | Versión | Fecha | Descripción del cambio | Responsable |
 |---------|-------|------------------------|-------------|
 | 1.0 | 04/10/2026 | Creación inicial de la matriz de trazabilidad | Equipo PetCare |
+| 1.1 | 07/10/2026 | Actualización de trazabilidad por CR-001: Seguimiento de peso en consultas | Camila Guarín |
 
 ## 1. Objetivo
 
@@ -30,8 +31,9 @@ La matriz permite identificar qué elementos de configuración deben revisarse c
 |-----------|-------------|--------------------|--------------------|--------------------|--------|
 | RF-01 | Registrar propietario | DIS-001 - Entidad Propietario | SRC-001 - registrar_propietario | TST-001 / CP-01 | Completa |
 | RF-02 | Registrar mascota | DIS-001 - Entidad Mascota | SRC-001 - registrar_mascota | TST-001 / CP-02 | Completa |
-| RF-03 | Programar consulta | DIS-001 - Entidad Consulta | SRC-001 - programar_consulta | TST-001 / CP-03 | Completa |
-| RF-04 | Consultar historial | DIS-001 - Entidades Mascota y Consulta | SRC-001 - consultar_historial | TST-001 / CP-04 | Completa |
+| RF-03 | Programar consulta y registrar peso | DIS-001 - Entidad Consulta | SRC-001 - programar_consulta | TST-001 / CP-03, PRU-03, PRU-05, PRU-06 | Completa |
+| RF-04 | Consultar historial incluyendo peso | DIS-001 - Entidades Mascota y Consulta | SRC-001 - consultar_historial | TST-001 / CP-04, PRU-04 | Completa |
+TST-001 / CP-04 | Completa |
 | RNF-01 | Integridad del historial | DIS-001 - Decisión D-01 | SRC-001 - (ausencia de operaciones de edición y eliminación) | TST-001 / CP-05 | Completa |
 
 El estado de trazabilidad indica la existencia de relaciones entre los artefactos. No constituye evidencia de ejecución satisfactoria de las pruebas; los resultados se registran en TST-001.
@@ -40,16 +42,15 @@ El estado de trazabilidad indica la existencia de relaciones entre los artefacto
 
 La configuración inicial de PetCare presenta la siguiente relación:
 
-REQ-001 v1.0
-↓
-DIS-001 v1.0
-↓
-SRC-001 v1.0
-↓
-TST-001 v1.0
+REQ-001 v1.1 
+↓ 
+DIS-001 v1.1 
+↓ 
+SRC-001 v1.1 
+↓ 
+TST-001 v1.1
 
-TRA-001 v1.0 documenta las relaciones de trazabilidad entre estos elementos.
-INV-001 v1.0 registra el inventario de los elementos de configuración.
+La configuración 1.1 incorpora los cambios aprobados del CR-001: Seguimiento de peso en consultas.
 
 ## 4. Trazabilidad por requisito
 
@@ -119,12 +120,12 @@ Nueva línea base
 
 | Solicitud de cambio | Requisito afectado | Diseño afectado | Código afectado | Prueba afectada | Commit / PR | Estado |
 |--------------------|--------------------|-----------------|-----------------|-----------------|-------------|--------|
-| Sin cambios aprobados en la versión 1.0 | - | - | - | - | - | Línea base inicial |
+| CR-001 | RF-03 y RF-04 | DIS-001 - Entidad Consulta | SRC-001 - programar_consulta y consultar_historial | TST-001 - PRU-03, PRU-04, PRU-05 y PRU-06 | PR #1 y PR #3 | Aprobado e integrado |
 
 ## 7. Observaciones
 
 Este documento constituye el Elemento de Configuración TRA-001.
 
-La versión 1.0 representa la trazabilidad correspondiente a la configuración inicial de PetCare establecida en BL-001.
+La versión 1.1 incorpora la trazabilidad correspondiente al CR-001 y a los elementos modificados para su implementación y verificación.
 
 Toda modificación posterior deberá actualizar esta matriz y quedar relacionada con una solicitud de cambio aprobada. Las solicitudes rechazadas también se registran, indicando el Issue que conserva el análisis y la decisión, aunque no generen cambios en los CI.

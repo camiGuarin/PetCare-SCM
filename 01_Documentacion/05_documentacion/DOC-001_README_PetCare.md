@@ -6,9 +6,9 @@
 - Nombre: Documentación de PetCare
 - Categoría: Documentación
 - Proyecto: PetCare
-- Versión: 1.0
+- Versión: 1.1
 - Estado: Aprobado para línea base inicial
-- Fecha: 04/10/2026
+- Fecha: 06/10/2026
 - Responsable: Equipo PetCare
 - Ubicación: 01_Documentacion/05_Documentacion/DOC-001_README_PetCare.md
 - Línea base: BL-001
@@ -18,6 +18,7 @@
 | Versión | Fecha | Descripción |
 |---|---|---|
 | 1.0 | 04/10/2026 | Creación de la documentación inicial del producto. |
+| 1.1 | 06/10/2026 | CR-001: se documenta el registro del peso en la consulta. |
 
 ## 1. Descripción del producto
 
@@ -33,6 +34,7 @@ La versión 1.0 permite:
 - Registrar mascotas asociadas a un propietario.
 - Programar consultas veterinarias.
 - Registrar observaciones clínicas básicas.
+- Registrar el peso de la mascota en cada consulta y consultarlo en el historial.
 - Consultar el historial de consultas de una mascota.
 - Mantener el historial sin operaciones de edición o eliminación de consultas registradas.
 
@@ -85,7 +87,7 @@ Desde la carpeta raíz del proyecto se puede ejecutar el código principal media
 python .\02_Codigo_Fuente\SRC-001_PetCare.py
 
 
-Al ejecutar el programa se muestran en consola las consultas registradas para una mascota, organizadas por fecha.
+Al ejecutar el programa se muestran en consola las consultas registradas para una mascota, organizadas por fecha e incluyendo el peso registrado en cada una.
 
 ## 7. Control de cambios
 

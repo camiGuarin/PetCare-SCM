@@ -6,9 +6,9 @@
 * Nombre: Diseño del Sistema
 * Categoría: Diseño
 * Proyecto: PetCare
-* Versión: 1.1
+* Versión: 1.2
 * Estado: Aprobado para línea base inicial
-* Fecha: 06/10/2026
+* Fecha: 07/10/2026
 * Responsable: Equipo PetCare
 * Ubicación: 01_Documentacion/02_Diseno/DIS-001_Diseno_Sistema.md
 
@@ -19,6 +19,7 @@
 | ------- | ---------- | -------------------------- | -------------- |
 | 1.0     | 03/10/2026 | Diseño inicial del sistema | Equipo PetCare |
 | 1.1     | 06/10/2026 | CR-001: se agrega el atributo peso_kg a la entidad Consulta | Juan David     |
+| 1.2     | 07/10/2026 | CR-002: se agrega la entidad Medicamento relacionada con Consulta | Juan David     |
 
 ## 1. Descripción general
 
@@ -59,6 +60,16 @@ La entidad Consulta contiene:
 * motivo
 * observaciones
 * peso_kg
+* medicamentos (lista de Medicamento, opcional)
+
+### Medicamento
+
+La entidad Medicamento contiene:
+
+* nombre
+* dosis
+* frecuencia
+* duracion_dias
 
 ## 3. Modelo de dominio
 
@@ -66,6 +77,7 @@ La entidad Consulta contiene:
 classDiagram
     Propietario "1" --> "0..*" Mascota : posee
     Mascota "1" --> "0..*" Consulta : tiene
+    Consulta "1" --> "0..*" Medicamento : formula
     class Propietario {
         identificacion
         nombre_completo
@@ -87,6 +99,12 @@ classDiagram
         observaciones
         peso_kg
     }
+        class Medicamento {
+        nombre
+        dosis
+        frecuencia
+        duracion_dias
+    }
 ```
 
 ## 4. Relación entre requisitos y diseño
@@ -95,8 +113,8 @@ classDiagram
 | ------------------------------- | ----------------------------------- |
 | RF-01 Registrar propietario     | Entidad Propietario                 |
 | RF-02 Registrar mascota         | Entidad Mascota                     |
-| RF-03 Programar consulta        | Entidad Consulta                    |
-| RF-04 Consultar historial       | Entidades Mascota y Consulta        |
+| RF-03 Programar consulta        | Entidades Consulta y Medicamento    |
+| RF-04 Consultar historial       | Entidades Mascota, Consulta y Medicamento|
 | RNF-01 Integridad del historial | Decisión de diseño D-01 (sección 6) |
 
 ## 5. Flujo general
@@ -118,13 +136,14 @@ classDiagram
 
 1. El usuario selecciona una mascota e ingresa los datos de la consulta.
 2. El sistema verifica que la mascota exista, que la fecha sea válida y que el peso sea un número mayor que cero.
-3. El sistema crea un objeto Consulta y lo almacena.
+3. Si se informan medicamentos, el sistema valida que cada uno tenga nombre, dosis, frecuencia y duración (entero mayor que cero).
+4. El sistema crea un objeto Consulta y lo almacena.
 
 ### Consulta de historial
 
 1. El usuario indica el código de la mascota.
 2. El sistema verifica que la mascota exista.
-3. El sistema devuelve sus consultas ordenadas por fecha, incluyendo el peso de cada una.
+3. El sistema devuelve sus consultas ordenadas por fecha, incluyendo el peso y los medicamentos de cada una.
 
 ## 6. Decisiones de diseño
 
